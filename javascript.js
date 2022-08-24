@@ -36,9 +36,28 @@ function updateScore() {
     score.textContent = `The score is currently ${playerCounter}:${computerCounter}`;
     if(playerCounter == 5) {
         result.textContent = "You have beaten the computer! Well done!"
+        finishGame()
     } else if(computerCounter == 5) {
-        result.textContent = "The computer has won :( Better look next time!"
+        result.textContent = "The computer has won :( Better luck next time!"
+        finishGame()
     }
+}
+
+function finishGame() {
+    rock.style.display = 'none';
+    scissors.style.display = 'none';
+    paper.style.display = 'none';
+    btnContainer.appendChild(restart)
+}
+
+function restartGame() {
+    btnContainer.removeChild(restart)
+    rock.style.display = 'block';
+    scissors.style.display = 'block';
+    paper.style.display = 'block';
+    playerCounter = 0
+    computerCounter = 0
+    updateScore()
 }
 
 let computerCounter = 0;
@@ -47,9 +66,14 @@ let playerCounter = 0;
 const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
-let score = document.querySelector('.score')
-let result = document.querySelector('.result')
+const btnContainer = document.querySelector('.btnContainer')
+const restart = document.createElement("button")
+restart.textContent = "Play again!"
+let score = document.querySelector('.score');
+let result = document.querySelector('.result');
+
 
 scissors.addEventListener('click', () => {playRound('scissors', getComputerChoice())});
 rock.addEventListener('click', () => {playRound('rock', getComputerChoice())});
 paper.addEventListener('click', () => {playRound('paper', getComputerChoice())});
+restart.addEventListener('click', restartGame)
