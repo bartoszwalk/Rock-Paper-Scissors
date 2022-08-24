@@ -37,7 +37,7 @@ function updateScore() {
     if(playerCounter == 5) {
         result.textContent = "You have beaten the computer! Well done!"
     } else if(computerCounter == 5) {
-        result.textContent = "The computer has won :(. Better look next time!"
+        result.textContent = "The computer has won :( Better look next time!"
     }
 }
 
