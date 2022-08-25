@@ -57,6 +57,7 @@ function restartGame() {
     paper.style.display = 'block';
     playerCounter = 0
     computerCounter = 0
+    result.textContent = "Choose your challenger below!"
     updateScore()
 }
 
