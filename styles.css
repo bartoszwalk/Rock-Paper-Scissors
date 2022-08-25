@@ -48,10 +48,12 @@ body {
 .rock,
 .paper,
 .scissors {
-    height: 300px;
-    width: 300px;
+    height: 220px;
+    width: 250px;
     border: 2px solid black;
     transition: 0.7s;
+    font-size: 150px;
+    text-align: center;
 }
 .rock:hover,
 .paper:hover,
